@@ -127,6 +127,6 @@ if(BUILD_TESTS)
 	add_samp_plugin_test(mysql-test
 		TARGET mysql
 		SCRIPT "unit_test"
-		TIMEOUT 20
+		TIMEOUT 30
 	)
 endif()
