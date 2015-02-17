@@ -9,7 +9,7 @@
 
 #define MYSQL_HOSTNAME "localhost"
 #define MYSQL_USERNAME "root"
-#define MYSQL_PASSWORD "1234"
+#define MYSQL_PASSWORD ""
 #define MYSQL_DATABASE "test"
 
 
@@ -48,11 +48,11 @@ Test:ConnectionFailPassword()
 	new MySQL:sql;
 
 	//empty password is valid, won't connect though
-	sql = mysql_connect(
+	/*sql = mysql_connect(
 		MYSQL_HOSTNAME, MYSQL_USERNAME, "", MYSQL_DATABASE);
 	ASSERT(sql != MYSQL_INVALID_HANDLE);
 	ASSERT(mysql_errno(sql) == ER_ACCESS_DENIED_ERROR);
-
+	*/
 	sql = mysql_connect(
 		MYSQL_HOSTNAME, MYSQL_USERNAME, "wrongpass", MYSQL_DATABASE);
 	ASSERT(sql != MYSQL_INVALID_HANDLE);

@@ -25,6 +25,7 @@ install:
   - cd ..
 
 before_script:
+  - mysql -e "CREATE DATABASE IF NOT EXISTS test;" -uroot
   - cmake . -DCMAKE_INSTALL_PREFIX=${SAMP_SERVER_ROOT} -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=1 
 
 script:
@@ -32,5 +33,4 @@ script:
   - make install
   - make test
 
-after_failure:
-  - cat Testing/Temporary/LastTest.log
+after_failure: cat Testing/Temporary/LastTest.log
