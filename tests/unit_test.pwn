@@ -1,4 +1,5 @@
-#define RUN_TESTS
+#define INCLUDE_TESTS
+#define TEST_AUTO_EXIT
 #include <a_samp>
 #include <a_mysql>
 #include <YSI_Core\y_testing>
@@ -114,5 +115,10 @@ Test:ConnectionFileSuccess()
 	ASSERT_TRUE(mysql_close(sql));
 }
 
+public OnGameModeInit()
+{
+	Testing_RunAll();
+	return 1;
+}
 main() {}
 

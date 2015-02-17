@@ -11,7 +11,7 @@ find_package(SAMPSDK REQUIRED)
 set(MYSQL_PLUGIN_CONFIG_INCLUDE_DIR "${CMAKE_CURRENT_BINARY_DIR}/config_headers")
 include_directories("${SAMPSDK_INCLUDE_DIR}" "${MYSQL_PLUGIN_CONFIG_INCLUDE_DIR}")
 
-set(CMAKE_DEBUG_POSTFIX "_d")
+#set(CMAKE_DEBUG_POSTFIX "_d")
 
 configure_file(
 	"../a_mysql.inc.in"
