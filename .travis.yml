@@ -34,5 +34,6 @@ script:
   - make -j2
   - make install
   - make test
+  - cat Testing/Temporary/LastTest.log
 
 after_failure: cat Testing/Temporary/LastTest.log
