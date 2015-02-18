@@ -1,5 +1,4 @@
 #define INCLUDE_TESTS
-#define TEST_AUTO_EXIT
 #include <a_samp>
 #include <a_mysql>
 #include <YSI_Core\y_testing>
@@ -118,6 +117,12 @@ Test:ConnectionFileSuccess()
 public OnGameModeInit()
 {
 	Testing_RunAll();
+	return 1;
+}
+public OnTestsComplete(tests, fails)
+{
+	if(fails == 0)
+	    SendRconCommand("exit");
 	return 1;
 }
 main() {}
