@@ -65,7 +65,7 @@ if(MSVC)
 endif()
 
 if(NOT MSVC) #we have auto-linking in Visual Studio
-	target_link_libraries(mysql ${Boost_LIBRARIES})
+	target_link_libraries(mysql ${Boost_LIBRARIES} rt)
 endif()
 
 if(BUILD_STATIC)
